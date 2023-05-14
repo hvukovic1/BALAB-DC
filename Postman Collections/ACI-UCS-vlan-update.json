@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "e7ee5ac3-eaa4-493a-952c-6428a0f6ec50",
+		"name": "ACI-UCS vlan update",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ACI Login",
+			"_postman_id": "30fa63eb-a562-4080-a124-0de7d78596ae",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"aaaUser\": {\n        \"attributes\": {\n            \"name\": \"admin\",\n            \"pwd\": \"Cisco,123\"\n        }\n    }\n}\n",
+					"options": {}
+				},
+				"url": "https://10.97.5.100/api/aaaLogin.json"
+			},
+			"response": []
+		},
+		{
+			"name": "VLAN usage on VMM pool",
+			"_postman_id": "0d97e340-662d-4f71-a8ca-51e5cb3c08ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://10.97.5.100/api/node/class/vmmEpPD.json?query-target-filter=and(eq(vmmEpPD.type,\"Tenant\"))",
+					"protocol": "https",
+					"host": [
+						"10",
+						"97",
+						"5",
+						"100"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"vmmEpPD.json"
+					],
+					"query": [
+						{
+							"key": "query-target-filter",
+							"value": "and(eq(vmmEpPD.type,\"Tenant\"))"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
