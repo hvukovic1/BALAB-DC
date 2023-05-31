@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "ACI Login",
-			"_postman_id": "30fa63eb-a562-4080-a124-0de7d78596ae",
+			"id": "30fa63eb-a562-4080-a124-0de7d78596ae",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -16,8 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"aaaUser\": {\n        \"attributes\": {\n            \"name\": \"admin\",\n            \"pwd\": \"Cisco,123\"\n        }\n    }\n}\n",
-					"options": {}
+					"raw": "{\n    \"aaaUser\": {\n        \"attributes\": {\n            \"name\": \"admin\",\n            \"pwd\": \"Cisco,123\"\n        }\n    }\n}\n"
 				},
 				"url": "https://10.97.5.100/api/aaaLogin.json"
 			},
@@ -25,7 +24,7 @@
 		},
 		{
 			"name": "VLAN usage on VMM pool",
-			"_postman_id": "0d97e340-662d-4f71-a8ca-51e5cb3c08ac",
+			"id": "0d97e340-662d-4f71-a8ca-51e5cb3c08ac",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +54,114 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"id": "4a129c64-6435-4644-850c-15556a7e8850",
+					"name": "VLAN usage on VMM pool",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://10.97.5.100/api/node/class/vmmEpPD.json?query-target-filter=and(eq(vmmEpPD.type,\"Tenant\"))",
+							"protocol": "https",
+							"host": [
+								"10",
+								"97",
+								"5",
+								"100"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"vmmEpPD.json"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "and(eq(vmmEpPD.type,\"Tenant\"))"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cisco APIC"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 19:25:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, DevCookie, APIC-challenge, Request-Tag"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST,GET,OPTIONS,DELETE"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache=\"Set-Cookie, Set-Cookie2\""
+						},
+						{
+							"key": "Client-Cert-Enabled",
+							"value": "false"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://127.0.0.1:8000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "false"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"totalCount\": \"5\",\n    \"imdata\": [\n        {\n            \"vmmEpPD\": {\n                \"attributes\": {\n                    \"allocMode\": \"dynamic\",\n                    \"bdDn\": \"uni/tn-common/BD-vMotion\",\n                    \"bindingType\": \"none\",\n                    \"blockAllPorts\": \"Disabled\",\n                    \"cfgdDelimiter\": \"\",\n                    \"childAction\": \"\",\n                    \"classPref\": \"encap\",\n                    \"configFlags\": \"\",\n                    \"crtrnEnabled\": \"no\",\n                    \"ctxDn\": \"uni/tn-common/ctx-Shared\",\n                    \"customEpgName\": \"\",\n                    \"deployIssues\": \"\",\n                    \"descr\": \"\",\n                    \"dn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-common/ap-Shared/epg-vMotion]\",\n                    \"encap\": \"vlan-2118\",\n                    \"encapAllocKey\": \"uni/tn-common/ap-Shared/epg-vMotion\",\n                    \"encapChanged\": \"no\",\n                    \"encapCtx\": \"VMM\",\n                    \"encapMode\": \"access\",\n                    \"encapModeOverride\": \"auto\",\n                    \"epgCos\": \"Cos0\",\n                    \"epgCosPref\": \"disabled\",\n                    \"epgPKey\": \"uni/tn-common/ap-Shared/epg-vMotion\",\n                    \"eppDn\": \"uni/epp/fv-[uni/tn-common/ap-Shared/epg-vMotion]\",\n                    \"faultDKey\": \"uni/tn-common/ap-Shared/epg-vMotion\",\n                    \"forgedTransmit\": \"Disabled\",\n                    \"id\": \"0\",\n                    \"idConsumerDn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-common/ap-Shared/epg-vMotion]\",\n                    \"instrImedcy\": \"immediate\",\n                    \"intraSecConf\": \"\",\n                    \"issues\": \"\",\n                    \"lagPolicyName\": \"\",\n                    \"lbAlgo\": \"mac-pin\",\n                    \"lcOwn\": \"local\",\n                    \"macChange\": \"Disabled\",\n                    \"mcastAddr\": \"0.0.0.0\",\n                    \"modTs\": \"2023-04-25T18:55:09.384+00:00\",\n                    \"monPolDn\": \"uni/tn-common/monepg-default\",\n                    \"name\": \"0c8ed13d-5080-45fb-a3ff-e6f9d599e5a0\",\n                    \"nameAlias\": \"\",\n                    \"netflowDir\": \"both\",\n                    \"netflowPref\": \"disabled\",\n                    \"numPorts\": \"0\",\n                    \"operDelimiter\": \"|\",\n                    \"pcEnfPref\": \"unenforced\",\n                    \"portAllocation\": \"none\",\n                    \"primaryEncap\": \"unknown\",\n                    \"primaryEncapInner\": \"unknown\",\n                    \"promMode\": \"Disabled\",\n                    \"resImedcy\": \"pre-provision\",\n                    \"secondaryEncapInner\": \"unknown\",\n                    \"statsCollectionState\": \"yes\",\n                    \"status\": \"\",\n                    \"switchingMode\": \"native\",\n                    \"txId\": \"1729382256910374061\",\n                    \"type\": \"Tenant\",\n                    \"untagged\": \"no\",\n                    \"updateTs\": \"0\",\n                    \"vnetOnly\": \"no\"\n                }\n            }\n        },\n        {\n            \"vmmEpPD\": {\n                \"attributes\": {\n                    \"allocMode\": \"dynamic\",\n                    \"bdDn\": \"uni/tn-DEMO/BD-FE-SG-PBR\",\n                    \"bindingType\": \"none\",\n                    \"blockAllPorts\": \"Disabled\",\n                    \"cfgdDelimiter\": \"\",\n                    \"childAction\": \"\",\n                    \"classPref\": \"encap\",\n                    \"configFlags\": \"\",\n                    \"crtrnEnabled\": \"no\",\n                    \"ctxDn\": \"uni/tn-DEMO/ctx-DEMO-Site2\",\n                    \"customEpgName\": \"\",\n                    \"deployIssues\": \"\",\n                    \"descr\": \"\",\n                    \"dn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR]\",\n                    \"encap\": \"vlan-2126\",\n                    \"encapAllocKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR\",\n                    \"encapChanged\": \"no\",\n                    \"encapCtx\": \"VMM\",\n                    \"encapMode\": \"access\",\n                    \"encapModeOverride\": \"auto\",\n                    \"epgCos\": \"Cos0\",\n                    \"epgCosPref\": \"disabled\",\n                    \"epgPKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR\",\n                    \"eppDn\": \"uni/epp/fv-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR]\",\n                    \"faultDKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR\",\n                    \"forgedTransmit\": \"Disabled\",\n                    \"id\": \"0\",\n                    \"idConsumerDn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-FE-SG-PBR]\",\n                    \"instrImedcy\": \"immediate\",\n                    \"intraSecConf\": \"\",\n                    \"issues\": \"\",\n                    \"lagPolicyName\": \"\",\n                    \"lbAlgo\": \"mac-pin\",\n                    \"lcOwn\": \"local\",\n                    \"macChange\": \"Disabled\",\n                    \"mcastAddr\": \"0.0.0.0\",\n                    \"modTs\": \"2023-05-09T16:18:38.700+00:00\",\n                    \"monPolDn\": \"uni/tn-common/monepg-default\",\n                    \"name\": \"277f67a8-2aa7-4141-a717-1202f7da114f\",\n                    \"nameAlias\": \"\",\n                    \"netflowDir\": \"both\",\n                    \"netflowPref\": \"disabled\",\n                    \"numPorts\": \"0\",\n                    \"operDelimiter\": \"|\",\n                    \"pcEnfPref\": \"unenforced\",\n                    \"portAllocation\": \"none\",\n                    \"primaryEncap\": \"unknown\",\n                    \"primaryEncapInner\": \"unknown\",\n                    \"promMode\": \"Disabled\",\n                    \"resImedcy\": \"immediate\",\n                    \"secondaryEncapInner\": \"unknown\",\n                    \"statsCollectionState\": \"yes\",\n                    \"status\": \"\",\n                    \"switchingMode\": \"native\",\n                    \"txId\": \"17870283321406716735\",\n                    \"type\": \"Tenant\",\n                    \"untagged\": \"no\",\n                    \"updateTs\": \"0\",\n                    \"vnetOnly\": \"no\"\n                }\n            }\n        },\n        {\n            \"vmmEpPD\": {\n                \"attributes\": {\n                    \"allocMode\": \"dynamic\",\n                    \"bdDn\": \"uni/tn-DEMO/BD-FE\",\n                    \"bindingType\": \"none\",\n                    \"blockAllPorts\": \"Disabled\",\n                    \"cfgdDelimiter\": \"\",\n                    \"childAction\": \"\",\n                    \"classPref\": \"encap\",\n                    \"configFlags\": \"\",\n                    \"crtrnEnabled\": \"no\",\n                    \"ctxDn\": \"uni/tn-DEMO/ctx-DEMO\",\n                    \"customEpgName\": \"\",\n                    \"deployIssues\": \"\",\n                    \"descr\": \"\",\n                    \"dn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp/epg-FE]\",\n                    \"encap\": \"vlan-2127\",\n                    \"encapAllocKey\": \"uni/tn-DEMO/ap-TierApp/epg-FE\",\n                    \"encapChanged\": \"no\",\n                    \"encapCtx\": \"VMM\",\n                    \"encapMode\": \"access\",\n                    \"encapModeOverride\": \"auto\",\n                    \"epgCos\": \"Cos0\",\n                    \"epgCosPref\": \"disabled\",\n                    \"epgPKey\": \"uni/tn-DEMO/ap-TierApp/epg-FE\",\n                    \"eppDn\": \"uni/epp/fv-[uni/tn-DEMO/ap-TierApp/epg-FE]\",\n                    \"faultDKey\": \"uni/tn-DEMO/ap-TierApp/epg-FE\",\n                    \"forgedTransmit\": \"Disabled\",\n                    \"id\": \"0\",\n                    \"idConsumerDn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp/epg-FE]\",\n                    \"instrImedcy\": \"immediate\",\n                    \"intraSecConf\": \"\",\n                    \"issues\": \"\",\n                    \"lagPolicyName\": \"\",\n                    \"lbAlgo\": \"mac-pin\",\n                    \"lcOwn\": \"local\",\n                    \"macChange\": \"Disabled\",\n                    \"mcastAddr\": \"0.0.0.0\",\n                    \"modTs\": \"2023-05-31T15:50:30.857+00:00\",\n                    \"monPolDn\": \"uni/tn-common/monepg-default\",\n                    \"name\": \"2d766081-0b84-4891-bcf4-6db5a3b2f819\",\n                    \"nameAlias\": \"\",\n                    \"netflowDir\": \"both\",\n                    \"netflowPref\": \"disabled\",\n                    \"numPorts\": \"0\",\n                    \"operDelimiter\": \"|\",\n                    \"pcEnfPref\": \"unenforced\",\n                    \"portAllocation\": \"none\",\n                    \"primaryEncap\": \"unknown\",\n                    \"primaryEncapInner\": \"unknown\",\n                    \"promMode\": \"Disabled\",\n                    \"resImedcy\": \"pre-provision\",\n                    \"secondaryEncapInner\": \"unknown\",\n                    \"statsCollectionState\": \"yes\",\n                    \"status\": \"\",\n                    \"switchingMode\": \"native\",\n                    \"txId\": \"17870283321406716735\",\n                    \"type\": \"Tenant\",\n                    \"untagged\": \"no\",\n                    \"updateTs\": \"0\",\n                    \"vnetOnly\": \"no\"\n                }\n            }\n        },\n        {\n            \"vmmEpPD\": {\n                \"attributes\": {\n                    \"allocMode\": \"dynamic\",\n                    \"bdDn\": \"uni/tn-DEMO/BD-BE-SG-PBR\",\n                    \"bindingType\": \"none\",\n                    \"blockAllPorts\": \"Disabled\",\n                    \"cfgdDelimiter\": \"\",\n                    \"childAction\": \"\",\n                    \"classPref\": \"encap\",\n                    \"configFlags\": \"\",\n                    \"crtrnEnabled\": \"no\",\n                    \"ctxDn\": \"uni/tn-DEMO/ctx-DEMO-Site2\",\n                    \"customEpgName\": \"\",\n                    \"deployIssues\": \"\",\n                    \"descr\": \"\",\n                    \"dn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR]\",\n                    \"encap\": \"vlan-2115\",\n                    \"encapAllocKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR\",\n                    \"encapChanged\": \"no\",\n                    \"encapCtx\": \"VMM\",\n                    \"encapMode\": \"private\",\n                    \"encapModeOverride\": \"auto\",\n                    \"epgCos\": \"Cos0\",\n                    \"epgCosPref\": \"disabled\",\n                    \"epgPKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR\",\n                    \"eppDn\": \"uni/epp/fv-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR]\",\n                    \"faultDKey\": \"uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR\",\n                    \"forgedTransmit\": \"Disabled\",\n                    \"id\": \"0\",\n                    \"idConsumerDn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/allctr-[uni/tn-DEMO/ap-TierApp-SG-PBR/epg-BE-SG-PBR]\",\n                    \"instrImedcy\": \"immediate\",\n                    \"intraSecConf\": \"security\",\n                    \"issues\": \"\",\n                    \"lagPolicyName\": \"\",\n                    \"lbAlgo\": \"mac-pin\",\n                    \"lcOwn\": \"local\",\n                    \"macChange\": \"Disabled\",\n                    \"mcastAddr\": \"0.0.0.0\",\n                    \"modTs\": \"2023-05-09T16:18:38.703+00:00\",\n                    \"monPolDn\": \"uni/tn-common/monepg-default\",\n                    \"name\": \"7c9b3aae-1091-4508-b537-97e05c5302cc\",\n                    \"nameAlias\": \"\",\n                    \"netflowDir\": \"both\",\n                    \"netflowPref\": \"disabled\",\n                    \"numPorts\": \"0\",\n                    \"operDelimiter\": \"|\",\n                    \"pcEnfPref\": \"unenforced\",\n                    \"portAllocation\": \"none\",\n                    \"primaryEncap\": \"vlan-2114\",\n                    \"primaryEncapInner\": \"unknown\",\n                    \"promMode\": \"Disabled\",\n                    \"resImedcy\": \"immediate\",\n                    \"secondaryEncapInner\": \"unknown\",\n                    \"statsCollectionState\": \"yes\",\n                    \"status\": \"\",\n                    \"switchingMode\": \"native\",\n                    \"txId\": \"17870283321406716735\",\n                    \"type\": \"Tenant\",\n                    \"untagged\": \"no\",\n                    \"updateTs\": \"0\",\n                    \"vnetOnly\": \"no\"\n                }\n            }\n        },\n        {\n            \"vmmEpPD\": {\n                \"attributes\": {\n                    \"allocMode\": \"dynamic\",\n                    \"bdDn\": \"uni/tn-DEMO/BD-BE\",\n                    \"bindingType\": \"none\",\n                    \"blockAllPorts\": \"Disabled\",\n                    \"cfgdDelimiter\": \"\",\n                    \"childAction\": \"\",\n                    \"classPref\": \"encap\",\n                    \"configFlags\": \"\",\n                    \"crtrnEnabled\": \"no\",\n                    \"ctxDn\": \"uni/tn-DEMO/ctx-DEMO\",\n                    \"customEpgName\": \"\",\n                    \"deployIssues\": \"\",\n                    \"descr\": \"\",\n                    \"dn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp/epg-BE]\",\n                    \"encap\": \"vlan-2128\",\n                    \"encapAllocKey\": \"uni/tn-DEMO/ap-TierApp/epg-BE\",\n                    \"encapChanged\": \"no\",\n                    \"encapCtx\": \"VMM\",\n                    \"encapMode\": \"access\",\n                    \"encapModeOverride\": \"auto\",\n                    \"epgCos\": \"Cos0\",\n                    \"epgCosPref\": \"disabled\",\n                    \"epgPKey\": \"uni/tn-DEMO/ap-TierApp/epg-BE\",\n                    \"eppDn\": \"uni/epp/fv-[uni/tn-DEMO/ap-TierApp/epg-BE]\",\n                    \"faultDKey\": \"uni/tn-DEMO/ap-TierApp/epg-BE\",\n                    \"forgedTransmit\": \"Disabled\",\n                    \"id\": \"0\",\n                    \"idConsumerDn\": \"uni/vmmp-VMware/dom-ACI-VMM-Site2/eppd-[uni/tn-DEMO/ap-TierApp/epg-BE]\",\n                    \"instrImedcy\": \"immediate\",\n                    \"intraSecConf\": \"\",\n                    \"issues\": \"\",\n                    \"lagPolicyName\": \"\",\n                    \"lbAlgo\": \"mac-pin\",\n                    \"lcOwn\": \"local\",\n                    \"macChange\": \"Disabled\",\n                    \"mcastAddr\": \"0.0.0.0\",\n                    \"modTs\": \"2023-05-31T15:50:30.857+00:00\",\n                    \"monPolDn\": \"uni/tn-common/monepg-default\",\n                    \"name\": \"c421a4cb-42cb-4ff3-89ed-0ffd124f691e\",\n                    \"nameAlias\": \"\",\n                    \"netflowDir\": \"both\",\n                    \"netflowPref\": \"disabled\",\n                    \"numPorts\": \"0\",\n                    \"operDelimiter\": \"|\",\n                    \"pcEnfPref\": \"unenforced\",\n                    \"portAllocation\": \"none\",\n                    \"primaryEncap\": \"unknown\",\n                    \"primaryEncapInner\": \"unknown\",\n                    \"promMode\": \"Disabled\",\n                    \"resImedcy\": \"pre-provision\",\n                    \"secondaryEncapInner\": \"unknown\",\n                    \"statsCollectionState\": \"yes\",\n                    \"status\": \"\",\n                    \"switchingMode\": \"native\",\n                    \"txId\": \"17870283321406716735\",\n                    \"type\": \"Tenant\",\n                    \"untagged\": \"no\",\n                    \"updateTs\": \"0\",\n                    \"vnetOnly\": \"no\"\n                }\n            }\n        }\n    ]\n}"
+				}
+			]
 		}
 	]
 }
