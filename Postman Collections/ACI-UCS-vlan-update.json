@@ -174,9 +174,9 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "<aaaLogin\n    inName=\"config\"\n    inPassword=\"config\" />"
+					"raw": "<aaaLogin\n    inName=\"admin\"\n    inPassword=\"DCRack01\" />"
 				},
-				"url": "http://{{hostName}}/nuova/"
+				"url": "http://10.97.5.50/nuova/"
 			},
 			"response": []
 		}
